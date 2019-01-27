@@ -3,6 +3,7 @@ package stock
 
 class Transaction {
 
+    Long id
     Long value
     String description
     String comment

@@ -2,6 +2,7 @@ package stock
 
 class Fund {
 
+    Long id
     String name
     String description
     Date timestamp
