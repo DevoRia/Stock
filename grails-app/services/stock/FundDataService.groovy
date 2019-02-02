@@ -53,6 +53,7 @@ class FundDataService {
         transaction.comment = cmd.comment
         transaction.description = desc
         transaction.isLoan = isLoan
+        if (isLoan) transaction.isFinalized = true
 
         return transaction.save()
     }
