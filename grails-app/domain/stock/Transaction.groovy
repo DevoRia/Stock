@@ -18,6 +18,7 @@ class Transaction {
     static constraints = {
         comment nullable:true
         twinTransaction nullable:true
+        timestamp nullable:true
     }
 
 }

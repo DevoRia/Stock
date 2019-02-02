@@ -5,16 +5,7 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'stock.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'stock.UserRole'
 grails.plugin.springsecurity.authority.className = 'stock.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	[pattern: '/',               access: ['permitAll']],
-	[pattern: '/error',          access: ['permitAll']],
-	[pattern: '/index',          access: ['permitAll']],
-	[pattern: '/index.gsp',      access: ['permitAll']],
-	[pattern: '/shutdown',       access: ['permitAll']],
-	[pattern: '/assets/**',      access: ['permitAll']],
-	[pattern: '/**/js/**',       access: ['permitAll']],
-	[pattern: '/**/css/**',      access: ['permitAll']],
-	[pattern: '/**/images/**',   access: ['permitAll']],
-	[pattern: '/**/favicon.ico', access: ['permitAll']]
+	[pattern: '/**',               access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
 ]
 
 grails.plugin.springsecurity.filterChain.chainMap = [

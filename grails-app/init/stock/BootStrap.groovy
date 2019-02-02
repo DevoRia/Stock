@@ -12,6 +12,8 @@ class BootStrap {
         if ( !User.findByUsername('admin') ) {
             def u = new User(username: 'admin', password: 'admin')
             u.save()
+            def ur = new UserRole(user: u, role: Role.findByAuthority('ADMIN'))
+            ur.save()
             new Fund(name: "Stock", description: "Main fund", timestamp: new Date()).save()
             new Fund(name: "Investment", description: "", timestamp: new Date()).save()
             new Fund(name: "Charity", description: "", timestamp: new Date()).save()

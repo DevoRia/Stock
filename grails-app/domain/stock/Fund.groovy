@@ -13,5 +13,8 @@ class Fund {
     static constraints = {
         name blank:false
         description nullable:true
+        timestamp nullable:true
+        user nullable:true
     }
+
 }
