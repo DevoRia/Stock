@@ -17,4 +17,16 @@ class Fund {
         user nullable:true
     }
 
+    def sum() {
+        Long sum = 0
+        this.transactions.each {
+            sum += it.value
+        }
+        return sum
+    }
+
+    def count() {
+        return findAllByUser(this.user).size()
+    }
+
 }
