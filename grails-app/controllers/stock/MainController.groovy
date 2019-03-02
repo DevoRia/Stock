@@ -18,12 +18,16 @@ class MainController {
     }
 
     def transaction(Long id) {
-        render view: 'transaction', model: [fundId: id, isFinal: params.isFinal]
+        Boolean isFinal = null
+        if(params.isFinal){
+            isFinal = true
+        }
+        render view: 'transaction', model: [fundId: id, isFinal:isFinal]
     }
 
     def income(TransactionCmd cmd){
         if (!fundDataService.income(cmd)){
-            render view: 'transaction', model: [fundId: cmd.fundId, isFinal: false]
+            render view: 'transaction', model: [fundId: cmd.fundId]
         }else{
             details(cmd.fundId)
         }

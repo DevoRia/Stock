@@ -4,7 +4,7 @@ package stock
 class Transaction {
 
     Long id
-    Long value
+    Double value
     String description
     String comment
     Long twinTransaction

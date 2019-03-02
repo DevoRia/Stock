@@ -10,7 +10,7 @@
         ${fund?.name}
     </a>
     : ${fund?.sum()}
-    <a href="<g:createLink controller="main" action="transaction" params="${[id:fund?.id, isFinal: false]}"/>" >
+    <a href="<g:createLink controller="main" action="transaction" params="${[id:fund?.id]}"/>" >
     Add
     </a>
     <a href="<g:createLink controller="main" action="transaction" params="${[id:fund?.id, isFinal: true]}"/>" >

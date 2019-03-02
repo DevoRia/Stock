@@ -5,7 +5,7 @@ import grails.validation.Validateable
 class TransactionCmd implements Validateable {
 
     Long fundId
-    Long value
+    Double value
     String comment
     Long twinTransaction
     Boolean isDebt
