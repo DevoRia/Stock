@@ -9,7 +9,9 @@
     <h1>Total: ${sum}</h1>
     <g:each in="${(1..funds.size())}" var="count" >
         <div class="">
-            <h2>${funds.get(count - 1).name}</h2>
+            <h2><a href="<g:createLink action="details" id="${funds.get(count - 1)?.id}"/>">
+                ${funds.get(count - 1).name}
+            </a></h2>
             ${funds.get(count - 1).sum()}
         </div>
     </g:each>

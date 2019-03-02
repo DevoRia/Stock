@@ -55,7 +55,7 @@ class FundDataService {
         transaction.isLoan = isLoan
         if (isLoan) transaction.isFinalized = true
 
-        return transaction.save()
+        return transaction.save(flush:true)
     }
 
     def saveIncomeTransaction(TransactionCmd cmd, Fund fund, String desc, isDept = false){
@@ -67,7 +67,7 @@ class FundDataService {
         transaction.isDebt = isDept
         transaction.timestamp = new Date()
 
-        return transaction.save()
+        return transaction.save(flush:true)
     }
 
 }
