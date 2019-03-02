@@ -4,7 +4,7 @@ class MainController {
 
     def fundDataService
 
-    static allowedMethods = [income: "POST", remove: "DELETE"]
+    static allowedMethods = [income: "POST", transferTo: "POST", remove: "DELETE"]
 
     def index() {
         List<Fund> funds = Fund.findAll()
@@ -32,6 +32,19 @@ class MainController {
     def finalizeMoney(TransactionCmd cmd){
         if (!fundDataService.finalizeMoney(cmd)){
             render view: 'transaction', model: [fundId: cmd.fundId, isFinal: true]
+        }else{
+            details(cmd.fundId)
+        }
+    }
+
+    def transfer(Long id){
+        render view: 'transfer', model: [fundId: id]
+    }
+
+    def transferTo(TransferTransaction cmd){
+        println cmd
+        if (!fundDataService.transfer(cmd)){
+            render view: 'transfer', model: [fundId: cmd.fundId]
         }else{
             details(cmd.fundId)
         }

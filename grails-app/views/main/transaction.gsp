@@ -16,7 +16,7 @@
         }
     %>
     <g:form action="${action}">
-        <input name="value" type="number"/>
+        <input name="value" type="number" step="0.01"/>
         <input name="comment"/>
         <input name="fundId" value="${fundId}" />
         <input type="submit"/>

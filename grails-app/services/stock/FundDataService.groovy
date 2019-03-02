@@ -22,8 +22,8 @@ class FundDataService {
         Fund fromFund = Fund.findById(cmd.fundId)
         Fund toFund = Fund.findById(cmd.anotherFund)
 
-        saveFinalizedTransaction(cmd, fromFund, Constants.getDescriptionTransferFrom(fromFund.name))
-        return saveIncomeTransaction(cmd, toFund, Constants.getDescriptionTransferTo(toFund.name))
+        saveFinalizedTransaction(cmd, fromFund, Constants.getDescriptionTransferTo(toFund.name))
+        return saveIncomeTransaction(cmd, toFund, Constants.getDescriptionTransferFrom(fromFund.name))
     }
 
     @Transactional
@@ -31,8 +31,8 @@ class FundDataService {
         Fund fromFund = Fund.findById(cmd.fundId)
         Fund toFund = Fund.findById(cmd.anotherFund)
 
-        saveFinalizedTransaction(cmd, fromFund, Constants.getDescriptionTransferFrom(fromFund.name), true)
-        return saveIncomeTransaction(cmd, toFund, Constants.getDescriptionTransferTo(toFund.name), true)
+        saveFinalizedTransaction(cmd, fromFund, Constants.getDescriptionTransferTo(toFund.name), true)
+        return saveIncomeTransaction(cmd, toFund, Constants.getDescriptionTransferFrom(fromFund.name), true)
     }
 
     def saveFinalizedTransaction(TransactionCmd cmd, Fund fund){
